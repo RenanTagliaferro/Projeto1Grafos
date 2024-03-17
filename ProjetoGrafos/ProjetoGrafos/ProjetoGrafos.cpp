@@ -1,8 +1,13 @@
 
 #include <iostream>
+#include "TGrafo.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    TGrafo grafo = grafo.FileToGraph("./in.txt");
+    grafo.ShowMatrixOnly();
+
+
 }
 

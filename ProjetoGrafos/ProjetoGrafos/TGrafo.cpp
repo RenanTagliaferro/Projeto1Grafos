@@ -77,6 +77,29 @@ void TGrafo::show()
     }
     std::cout << "\nfim da impressao do grafo." << std::endl;
 }
+void TGrafo::ShowMatrixOnly()
+{
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << "\n";
+        for (int w = 0; w < n; w++)
+            if (w == n-1)
+            {
+                if (adj[i][w] == INT_MAX)
+                    std::cout << "0";
+
+                else std::cout << adj[i][w];
+            }
+            else
+            {
+                if (adj[i][w] == INT_MAX)
+                    std::cout <<"0" << ",";
+
+                else std::cout  << adj[i][w] << ",";
+            }
+    }
+    std::cout << "\nfim da impressao do grafo." << std::endl;
+}
 
 int TGrafo::inDegree(int v)
 {
@@ -162,9 +185,14 @@ TGrafo& TGrafo::FileToGraph(std::string fileName)
         TGrafo grafo(0);
         return grafo;
     }
+    int ignore;
+    file >> ignore;//pula primeira linha.
     int a, v = 0;
-    file >> v;
-    file >> a;// le primeira e segunda linha
+    file >> v;// le a segunda linha == vertices
+    for (int i = 0; i < v; i++)
+        file >> ignore;//ja que o id e o numero da linnha são iguais o id é irrelevante de ser guardado
+
+    file >> a;//le o num de arestas
 
     TGrafo* grafo = new TGrafo(v);
 
@@ -172,9 +200,9 @@ TGrafo& TGrafo::FileToGraph(std::string fileName)
     this->m = 0;
     for (int i = 0; i < a; ++i)
     {
-        int x, y = 0;
-        file >> x >> y;
-        grafo->insereA(x, y, 1);
+        int x, y, z = 0;
+        file >> x >> y >> z;
+        grafo->insereA(x-1, y-1, z);//-1 pq o indice começa no zero, mas a linha no 1.
     }
     file.close();
     return *grafo;

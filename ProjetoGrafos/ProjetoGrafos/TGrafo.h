@@ -36,6 +36,7 @@ public:
 	void insereA(int v, int w, float value);
 	void removeA(int v, int w);
 	void show();
+	void ShowMatrixOnly();
 	~TGrafo();
 
 	int inDegree(int v);
