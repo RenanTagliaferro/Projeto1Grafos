@@ -582,3 +582,35 @@ void TGrafo::MatrixToFile(std::string filePath)
 
     outputFile.close();
 }
+void TGrafo::InsertVertix()
+{
+    int v = this->n;
+    std::cout << "\nNumero atual de vertices: " << v << ".\n";
+    std::cout << "\nindice do novo vertice: " << v << ". Id do novo vertice: \n" << v + 1 << ".\n";
+    int newSize = v + 1;
+    float** oldMatrix = this->adj;
+    float** newMatrix = new float* [newSize];
+
+    for (int i = 0; i < newSize; ++i) 
+    {
+        newMatrix[i] = new float[newSize];
+        for (int j = 0; j < newSize; ++j) 
+        {
+            if (i < v && j < v)
+                // Copiar a matriz antiga
+                newMatrix[i][j] = oldMatrix[i][j];
+
+            else 
+                // Inicializar novas células com INT_MAX
+                newMatrix[i][j] = INT_MAX;
+        }
+    }
+
+    // Deletar a matriz antiga
+    for (int i = 0; i < v; ++i) 
+        delete[] oldMatrix[i];
+    delete[] oldMatrix;
+
+    this->adj = newMatrix;
+    this->n = newSize;
+}
