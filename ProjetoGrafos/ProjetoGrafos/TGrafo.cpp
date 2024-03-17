@@ -439,7 +439,7 @@ TGrafo& TGrafo::GetReducedMatrix()
 
         std::cout << "Componente Fortemente Conectado encontrado, indice: " << index << " : Membros: ";
         for (int vertex : component)
-            std::cout << vertex << " ";
+            std::cout << vertex+1 << " ";
 
         index++;
         std::cout << std::endl;

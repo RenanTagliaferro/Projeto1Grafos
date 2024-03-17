@@ -44,8 +44,8 @@ int main()
 				<< "[6] Remove aresta\n"
 				<< "[7] Mostrar conteúdo do arquivo\n"
 				<< "[8] Mostrar grafo\n"
-				<< "[9] Apresentar a conexidade do grafo e o reduzido\n"
-				<< "[0] Encerrar a aplicação\nOption: ";
+				<< "[9] Apresentar a conexidade do grafo e o grafo reduzido\n"
+				<< "[0] Encerrar a aplicacao\nOption: ";
 			std::cin >> option;
 			std::cin.ignore();
 			std::cout << '\n';
@@ -106,7 +106,11 @@ int main()
 			case 9:
 				x = grafo.graphCategory();
 				std::string res = CategoryAux(x);
-				std::cout << "\nEste Grafo é do tipo: "<<res;
+				std::cout << "\nEste Grafo eh do tipo: "<<res;
+				std::cout << "\nSeu Grafo reduzido em forma de matrix de adjacencia eh:\n";
+				TGrafo grafoReduzido = grafo.GetReducedMatrix();
+				grafoReduzido.show();
+
 				break;
 				
 			}
