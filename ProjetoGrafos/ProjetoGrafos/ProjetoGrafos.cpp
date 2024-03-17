@@ -45,7 +45,7 @@ void PrintType(int type)
 			std::cout << "6 - grafo orientado com peso na aresta";
 			break;
 		case 7:
-			std::cout << "7 – grafo orientado com peso nos vértices e arestas ";
+			std::cout << "7 – grafo orientado com peso nos vértices e arestas";
 			break;
 	}
 }
