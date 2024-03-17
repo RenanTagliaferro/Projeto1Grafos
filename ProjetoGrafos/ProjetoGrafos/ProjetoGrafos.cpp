@@ -24,8 +24,7 @@ std::string CategoryAux(int x)
 int main()
 {
 	TGrafo grafo = grafo.FileToGraph("./grafo.txt");
-	grafo.ShowMatrixOnly();
-
+	//grafo.ShowMatrixOnly();
 	int option;
 	int x, y, z;
 	while (true)
@@ -39,13 +38,13 @@ int main()
 				<< "Digite o numero da opcao\n"
 				<< "[1] Ler dados do arquivo grafo.txt e Criar Matriz de Adjacencia\n"
 				<< "[2] Gravar Matriz de Adjacencia no arquivo grafo.txt\n"
-				<< "[3] Inserir vértice"
-				<< "[4] Inserir aresta"
-				<< "[5] Remove vértice"
-				<< "[6] Remove aresta"
-				<< "[7] Mostrar conteúdo do arquivo"
-				<< "[8] Mostrar grafo"
-				<< "[9] Apresentar a conexidade do grafo e o reduzido"
+				<< "[3] Inserir vertice\n"
+				<< "[4] Inserir aresta\n"
+				<< "[5] Remove vertice\n"
+				<< "[6] Remove aresta\n"
+				<< "[7] Mostrar conteúdo do arquivo\n"
+				<< "[8] Mostrar grafo\n"
+				<< "[9] Apresentar a conexidade do grafo e o reduzido\n"
 				<< "[0] Encerrar a aplicação\nOption: ";
 			std::cin >> option;
 			std::cin.ignore();
@@ -54,7 +53,7 @@ int main()
 			switch (option)
 			{
 			case 1:
-				grafo = grafo.FileToGraph("./in.txt");
+				grafo = grafo.FileToGraph("./grafo.txt");
 				std::cout << "\nGrafo criado a partir do arquivo.\n";
 				grafo.show();
 				break;

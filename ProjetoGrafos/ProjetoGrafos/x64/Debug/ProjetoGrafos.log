@@ -1,3 +1,4 @@
 ﻿  ProjetoGrafos.cpp
-C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(54,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(79,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(22): warning C4715: 'CategoryAux': not all control paths return a value
   ProjetoGrafos.vcxproj -> C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\x64\Debug\ProjetoGrafos.exe
