@@ -555,5 +555,30 @@ std::vector<std::vector<int>> TGrafo::Kosaraju(float** adj_matrix)
 
 void TGrafo::MatrixToFile(std::string filePath)
 {
-    
+    std::ofstream outputFile(filePath);
+
+    if (!outputFile.is_open()) 
+    {
+        std::cerr << "Erro ao abrir aquivo" << std::endl;
+        return;
+    }
+    outputFile <<  6 << std::endl;//poe to tipo do grafo
+    outputFile << this->n << std::endl;//n
+    for (int i = 0; i < this->n; ++i) 
+        outputFile << i + 1 << std::endl;//ids dos vertices
+
+
+    outputFile << this->m << std::endl;//m
+    for (int i = 0; i < this->n; ++i) 
+    {
+        for (int j = 0; j < this->n; ++j) 
+        {
+            if (this->adj[i][j] != INT_MAX) 
+            {
+                outputFile << i + 1 << " " << j + 1 << " " << this->adj[i][j] << std::endl;
+            }
+        }
+    }
+
+    outputFile.close();
 }

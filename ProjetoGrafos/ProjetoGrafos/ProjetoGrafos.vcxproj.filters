@@ -31,5 +31,8 @@
     <Text Include="grafo.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="grafo_original.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
