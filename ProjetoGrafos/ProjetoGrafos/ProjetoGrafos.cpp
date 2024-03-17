@@ -35,6 +35,7 @@ int main()
 			std::cout << "\n****************************************************\n";
 			std::cout << "*** PROJETO GRAFOS ***\n";
 			std::cout << "*** Analise de interacoes no Instagram ***\n"
+				<<"Atenção, o programa ja gera o grafo a partir do arquivo txt ao iniciar!(opcao 1 ja rodada)\n"
 				<< "Digite o numero da opcao\n"
 				<< "[1] Ler dados do arquivo grafo.txt e Criar Matriz de Adjacencia\n"
 				<< "[2] Gravar Matriz de Adjacencia no arquivo grafo.txt\n"
@@ -61,7 +62,8 @@ int main()
 			case 2:
 				//Deve gravado o grafo da memória RAM para o arquivo grafo.txt, o formato do arquivo
 					//na gravação deve ser o mesmo da leitura
-				; 
+				grafo.MatrixToFile("./grafo.txt");
+				std::cout << "\nGrafo novo inserido no arquivo!\n";
 				break;
 
 			case 3:
@@ -99,7 +101,7 @@ int main()
 				break;
 
 			case 8:
-				std::cout << "\nLista de adjacencia do grafo:\n";
+				std::cout << "\nMatrix de adjacencia do grafo:\n";
 				grafo.show();
 				break;
 

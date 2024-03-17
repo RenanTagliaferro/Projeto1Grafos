@@ -552,3 +552,8 @@ std::vector<std::vector<int>> TGrafo::Kosaraju(float** adj_matrix)
     //5: retorna a lista de fortemente conectados
     return strongly_connected_components;
 }
+
+void TGrafo::MatrixToFile(std::string filePath)
+{
+    
+}

@@ -52,5 +52,6 @@ public:
 	int graphCategory();
 	bool canReach(int start, int end);
 	TGrafo& GetReducedMatrix();
+	void MatrixToFile(std::string filePath)
 };
 #endif
