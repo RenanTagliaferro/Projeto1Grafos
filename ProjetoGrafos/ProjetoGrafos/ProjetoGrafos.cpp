@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "TGrafo.h"
+#include <fstream>
 
 std::string CategoryAux(int x)
 {
@@ -20,6 +21,85 @@ std::string CategoryAux(int x)
 			break;
 	}
 }
+
+void PrintType(int type)
+{
+	switch (type)
+	{
+		case 1:
+			std::cout << "1 – grafo nao orientado com peso no vertice";
+			break;
+		case 2:
+			std::cout << "2 – grafo nao orientado com peso na aresta";
+			break;
+		case 3:
+			std::cout << "3 – grafo nao orientado com peso nos vertices e arestas";
+			break;
+		case 4:
+			std::cout << "4 – grafo orientado sem peso";
+			break;
+		case 5:
+			std::cout << "5 – grafo orientado com peso no vertice";
+			break;
+		case 6:
+			std::cout << "6 - grafo orientado com peso na aresta";
+			break;
+		case 7:
+			std::cout << "7 – grafo orientado com peso nos vértices e arestas ";
+			break;
+	}
+}
+
+void PrintTxt(std::string filePath)
+{
+	std::ifstream file(filePath);
+
+	if (!file.is_open())
+	{
+		std::cerr << "Erro ao abrir o arquivo." << std::endl;
+	}
+
+	int type,id = 0;
+	file >> type;//le primeira linha.
+	std::cout << "\nTipo do Grafo:\n";
+	PrintType(type);std::cout << "\n";
+	int a, v = 0;
+
+	file >> v;// le a segunda linha == vertices
+	std::cout << "\nnumero de vertices: "<<v<<"\n";
+	std::cout << "ids dos vertices: \n";
+	for (int i = 0; i < v; i++)
+	{
+		id = 0;
+		file >> id;
+		if (i != v - 1)
+			std::cout << id << ", ";
+		else
+			std::cout << id << ".";
+	}
+
+	file >> a;//le o num de arestas
+
+	std::cout << "\n\nnumero de Arestas: " << a << "\n";
+	std::cout << "conexoes das Arestas: (formato origem->destino|peso)\n";
+
+	//int x, y, z;
+	//for (int j = 0; j < a; j++)
+	//{
+	//	file >> x >> y >> z;
+	//	std::cout << "Vertice origem: " << x << ", Vertice destino: " << y << ", Peso da aresta: "<<z<<"\n";
+	//}
+	//file.close();
+
+	int x, y, z;
+	for (int j = 0; j < a; j++)
+	{
+		file >> x >> y >> z;
+		std::cout << x << "->" << y << "|Peso: " << z << "\n";
+	}
+	file.close();
+}
+
 
 int main()
 {
@@ -95,7 +175,9 @@ int main()
 
 			case 7:
 				//Mostra o conteúdo atual do arquivo grafo.txt, ou seja, tipo do grafo, vértices e arestas em
-				//um formato visualmente compreensivo e atraente;;
+				//um formato visualmente compreensivo e atraente;
+				std::cout << "\nConteudo do .txt:\n";
+				PrintTxt("./grafo.txt");
 				break;
 
 			case 8:
