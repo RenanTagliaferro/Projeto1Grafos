@@ -18,5 +18,13 @@
     <ClCompile Include="ProjetoGrafos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TGrafo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TGrafo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
