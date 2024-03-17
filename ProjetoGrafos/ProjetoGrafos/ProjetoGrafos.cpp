@@ -2,6 +2,24 @@
 #include <iostream>
 #include "TGrafo.h"
 
+std::string CategoryAux(int x)
+{
+	switch (x)
+	{
+		case 0:
+			return "Desconexo!";
+			break;
+		case 1:
+			return "Simplesmente Conexo!";
+			break;
+		case 2:
+			return "Semi-Fortemente Conexo!";
+			break;
+		case 3:
+			return "Fortemente Conexo!";
+			break;
+	}
+}
 
 int main()
 {
@@ -14,6 +32,7 @@ int main()
 	{
 		do
 		{
+			x, y, z = 0;
 			std::cout << "\n****************************************************\n";
 			std::cout << "*** PROJETO GRAFOS ***\n";
 			std::cout << "*** Analise de interacoes no Instagram ***\n"
@@ -41,43 +60,56 @@ int main()
 				break;
 
 			case 2:
+				//Deve gravado o grafo da memória RAM para o arquivo grafo.txt, o formato do arquivo
+					//na gravação deve ser o mesmo da leitura
 				; 
 				break;
 
 			case 3:
+				// Permite inserir novos vértices juntamente com seus rótulos e peso (se for o caso).
+				; 
+				break;
+
+			case 4:
 				std::cout << "\n digite o vertice origem: ";
 				std::cin >> x;
 				std::cout << "\n digite o vertice destino: ";
 				std::cin >> y;
 				std::cout << "\n digite o peso da aresta: ";
 				std::cin >> z;
-				grafo.insereA(x,y,z); 
-				break;
-
-			case 4:
-				; 
+				grafo.insereA(x, y, z); 
 				break;
 
 			case 5:
-				; 
+				std::cout << "\n digite o vertice a ser removido: ";
+				std::cin >> x;
+				grafo.RemoveV(x);
 				break;
 
 			case 6:
-				; 
+				std::cout << "\n digite o vertice origem: ";
+				std::cin >> x;
+				std::cout << "\n digite o vertice destino: ";
+				std::cin >> y;
+				grafo.removeA(x, y);
 				break;
 
 			case 7:
-				; 
+				//Mostra o conteúdo atual do arquivo grafo.txt, ou seja, tipo do grafo, vértices e arestas em
+				//um formato visualmente compreensivo e atraente;;
 				break;
 
 			case 8:
-				; 
+				std::cout << "\nLista de adjacencia do grafo:\n";
+				grafo.show();
 				break;
 
 			case 9:
-				; 
+				x = grafo.graphCategory();
+				std::string res = CategoryAux(x);
+				std::cout << "\nEste Grafo é do tipo: "<<res;
 				break;
-
+				
 			}
 			std::cout << '\n';
 		} while (option != 0);
