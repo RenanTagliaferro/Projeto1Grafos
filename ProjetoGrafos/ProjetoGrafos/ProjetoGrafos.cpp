@@ -35,7 +35,7 @@ int main()
 			std::cout << "\n****************************************************\n";
 			std::cout << "*** PROJETO GRAFOS ***\n";
 			std::cout << "*** Analise de interacoes no Instagram ***\n"
-				<<"Atenção, o programa ja gerou o grafo original a partir do arquivo txt ao iniciar!(ou seja opcao 1 ja rodada)\n"
+				<<"Atencao, o programa ja gerou o grafo original a partir do arquivo txt ao iniciar!(ou seja opcao 1 ja rodada)\n"
 				<< "Digite o numero da opcao\n"
 				<< "[1] Ler dados do arquivo grafo.txt e Criar Matriz de Adjacencia\n"
 				<< "[2] Gravar Matriz de Adjacencia no arquivo grafo.txt\n"
@@ -43,7 +43,7 @@ int main()
 				<< "[4] Inserir aresta\n"
 				<< "[5] Remove vertice\n"
 				<< "[6] Remove aresta\n"
-				<< "[7] Mostrar conteúdo do arquivo\n"
+				<< "[7] Mostrar conteudo do arquivo\n"
 				<< "[8] Mostrar grafo\n"
 				<< "[9] Apresentar a conexidade do grafo e o grafo reduzido\n"
 				<< "[0] Encerrar a aplicacao\nOption: ";
