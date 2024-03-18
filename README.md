@@ -13,3 +13,5 @@ Projeto 1 de grafos, tema de relações de interação no instagram. será do ti
 -in.txt: arquivo no formato de input descrito pelo professor para ser utilizado no codigo principal.
 
  -O codigo principal se encontra na Pasta ProjetoGrafos.
+
+Link do Grafo simulado - http://graphonline.ru/pt/?graph=ArgzTdlOSzqYqLOT
