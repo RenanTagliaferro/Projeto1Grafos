@@ -10,6 +10,8 @@ Projeto 1 de grafos, tema de relações de interação no instagram. será do ti
 
 -WebScrapParser.cpp: codigo usado para converter o resultado do webscraper pra o formato do arquivo descrito no enunciado do projeto.
 
--in.txt: arquivo no formato de input descrito pelo professor para ser utilizado no codigo principal.
+-grafo.txt: arquivo no formato de input descrito pelo professor para ser utilizado no codigo principal.
 
  -O codigo principal se encontra na Pasta ProjetoGrafos.
+
+Link do Grafo simulado - http://graphonline.ru/pt/?graph=eRbizbLOgIuvSrML
