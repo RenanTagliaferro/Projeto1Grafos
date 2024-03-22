@@ -88,14 +88,15 @@ void TGrafo::ShowMatrixOnly()
                 if (adj[i][w] == INT_MAX)
                     std::cout << "0";
 
-                else std::cout << adj[i][w];
+                else std::cout << "1";
             }
             else
             {
                 if (adj[i][w] == INT_MAX)
+
                     std::cout <<"0" << ",";
 
-                else std::cout  << adj[i][w] << ",";
+                else std::cout  << "1" << ",";
             }
     }
     std::cout << "\nfim da impressao do grafo." << std::endl;

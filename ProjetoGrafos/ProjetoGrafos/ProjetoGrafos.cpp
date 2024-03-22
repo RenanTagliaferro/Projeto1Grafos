@@ -83,14 +83,6 @@ void PrintTxt(std::string filePath)
 	std::cout << "\n\nnumero de Arestas: " << a << "\n";
 	std::cout << "conexoes das Arestas: (formato origem->destino|peso)\n";
 
-	//int x, y, z;
-	//for (int j = 0; j < a; j++)
-	//{
-	//	file >> x >> y >> z;
-	//	std::cout << "Vertice origem: " << x << ", Vertice destino: " << y << ", Peso da aresta: "<<z<<"\n";
-	//}
-	//file.close();
-
 	int x, y, z;
 	for (int j = 0; j < a; j++)
 	{
@@ -145,7 +137,6 @@ int main()
 					break;
 
 				case 3:
-					// Permite inserir novos vértices juntamente com seus rótulos e peso (se for o caso).
 					std::cout << "\nVertice sera inserido ao fim da matriz de adjacencia\n";
 					grafo.InsertVertix();
 					std::cout << "\nVertice inserido com sucesso!\n";
