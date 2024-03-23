@@ -96,7 +96,7 @@ void PrintTxt(std::string filePath)
 int main()
 {
 	TGrafo grafo = grafo.FileToGraph("./grafo_original.txt");
-	//grafo.ShowMatrixOnly();
+	grafo.ShowMatrixOnly();
 	int option;
 	int x, y, z;
 	while (true)
