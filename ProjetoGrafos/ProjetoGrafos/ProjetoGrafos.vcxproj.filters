@@ -21,9 +21,15 @@
     <ClCompile Include="TGrafo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Testes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TGrafo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Testes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,6 +38,18 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="grafo_original.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Teste1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Teste2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Teste3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Teste4.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

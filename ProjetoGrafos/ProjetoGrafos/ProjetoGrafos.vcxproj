@@ -128,14 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ProjetoGrafos.cpp" />
+    <ClCompile Include="Testes.cpp" />
     <ClCompile Include="TGrafo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Testes.h" />
     <ClInclude Include="TGrafo.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="grafo.txt" />
     <Text Include="grafo_original.txt" />
+    <Text Include="Teste1.txt" />
+    <Text Include="Teste2.txt" />
+    <Text Include="Teste3.txt" />
+    <Text Include="Teste4.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
