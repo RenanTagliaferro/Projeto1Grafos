@@ -493,6 +493,7 @@ TGrafo& TGrafo::GetReducedMatrix()
     grafoReduzido->n = (tamGReduzido);
     grafoReduzido->RecountA();
     return *grafoReduzido;
+
 }
 
 void TGrafo::BuscaProfund1(float** adj_matrix, int vertex, std::stack<int>& stack, std::vector<bool>& visited, int n)
@@ -614,4 +615,72 @@ void TGrafo::InsertVertix()
 
     this->adj = newMatrix;
     this->n = newSize;
+}
+
+void TGrafo::GetAllDegrees()
+{
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << "Vertice: " << i <<"\n";
+        std::cout << "Grau Entrada: " << inDegree(i) << "\n";
+        std::cout << "Grau Saida:" << outDegree(i) << "\n\n";
+    }
+}
+
+void TGrafo::WelshPowell()
+{
+    std::vector<int> cores(n, -1); // Inicializa vetor de cores com -1 (indicando não colorido)
+    std::vector<bool> naoColoridos(n, true); // Inicializa vetor de booleanos para indicar vértices não coloridos
+
+    int k = 0; // Número atual da classe de cor
+
+    // Enquanto houver vértices não coloridos
+    while (std::find(naoColoridos.begin(), naoColoridos.end(), true) != naoColoridos.end())
+    {
+        std::vector<int> Ck; // Vetor de vértices da classe de cor k
+
+        // Itera sobre os vértices não coloridos
+        for (int i = 0; i < n; i++)
+        {
+            if (naoColoridos[i])
+            {
+                bool podeColorir = true;
+
+                // Verifica se algum vizinho de i já foi colorido com a cor k
+                for (int j = 0; j < n; j++)
+                {
+                    if (adj[i][j] != INT_MAX && cores[j] == k)
+                    {
+                        podeColorir = false;
+                        break;
+                    }
+                }
+
+                // Se nenhum vizinho foi colorido com a cor k, adiciona i à classe de cor k
+                if (podeColorir)
+                {
+                    Ck.push_back(i);
+                    cores[i] = k; // Marca i com a cor k
+                    naoColoridos[i] = false; // Marca i como colorido
+                }
+            }
+        }
+
+        // Imprime os vértices da classe de cor k
+        std::cout << "Cor " << k + 1 << " vertices {";
+        for (size_t i = 0; i < Ck.size(); i++)
+        {
+            std::cout << Ck[i] + 1;
+            if (i != Ck.size() - 1)
+                std::cout << ",";
+        }
+        std::cout << "}" << std::endl;
+        k++; // Avança para a próxima classe de cor
+    }
+
+    // Exibe as cores atribuídas aos vértices
+    std::cout << "\nNumero de cores diferentes: " << k << "\n\n";
+    for (int i = 0; i < n; i++)
+        std::cout << "Vertice " << i + 1 << " tem a cor numero " << cores[i] + 1 << std::endl;
+
 }

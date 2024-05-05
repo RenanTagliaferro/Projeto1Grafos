@@ -120,10 +120,17 @@ int main()
 				<< "[7] Mostrar conteudo do arquivo\n"
 				<< "[8] Mostrar grafo\n"
 				<< "[9] Apresentar a conexidade do grafo e o grafo reduzido\n"
+				<< "[10] PARTE 2 PROJETO: Grau dos vertices:\n"
+				<< "[11] PARTE 2 PROJETO: Coloraçao :\n"
+				<< "[12] PARTE 2 PROJETO: Percurso/Grafo Euleriano :\n"
+				<< "[13] PARTE 2 PROJETO: Admite grafo/ciclo hamiltoniano. :\n"
 				<< "[0] Encerrar a aplicacao\nOption: ";
 			std::cin >> option;
 			std::cin.ignore();
 			std::cout << '\n';
+			x = grafo.graphCategory();
+			std::string res = CategoryAux(x);
+			TGrafo grafoReduzido = grafo.GetReducedMatrix();
 
 			switch (option)
 			{
@@ -179,14 +186,24 @@ int main()
 					break;
 
 				case 9:
-					x = grafo.graphCategory();
-					std::string res = CategoryAux(x);
 					std::cout << "\nEste Grafo eh do tipo: "<<res;
 					std::cout << "\nSeu Grafo reduzido em forma de matrix de adjacencia eh:\n";
-					TGrafo grafoReduzido = grafo.GetReducedMatrix();
 					grafoReduzido.show();
 					break;
-
+				case 10:
+					std::cout << "\nGRAUS DOS VERTICES: \n\n";
+					grafo.GetAllDegrees();
+					break;
+				case 11:
+					std::cout << "\nCOLORACAO DO GRAFO: ";
+					grafo.WelshPowell();
+					break;
+				case 12:
+					//<< "[12] PARTE 2 PROJETO: Percurso/Grafo Euleriano :\n"
+					break;
+				case 13:
+					//<< "[13] PARTE 2 PROJETO: Admite grafo/ciclo hamiltoniano. OU talvez Djikstra?:\n"
+					break;
 			}
 			std::cout << '\n';
 		} while (option != 0);

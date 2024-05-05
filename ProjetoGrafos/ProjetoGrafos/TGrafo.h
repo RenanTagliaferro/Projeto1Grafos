@@ -54,5 +54,7 @@ public:
 	TGrafo& GetReducedMatrix();
 	void MatrixToFile(std::string filePath);
 	void InsertVertix();
+	void GetAllDegrees();
+	void WelshPowell();
 };
 #endif
