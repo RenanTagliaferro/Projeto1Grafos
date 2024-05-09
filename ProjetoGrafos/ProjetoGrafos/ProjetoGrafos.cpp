@@ -121,7 +121,7 @@ int main()
 				<< "[8] Mostrar grafo\n"
 				<< "[9] Apresentar a conexidade do grafo e o grafo reduzido\n"
 				<< "[10] PARTE 2 PROJETO: Grau dos vertices:\n"
-				<< "[11] PARTE 2 PROJETO: Coloraçao :\n"
+				<< "[11] PARTE 2 PROJETO: Coloracao :\n"
 				<< "[12] PARTE 2 PROJETO: Percurso/Grafo Euleriano :\n"
 				<< "[13] PARTE 2 PROJETO: Admite grafo/ciclo hamiltoniano. :\n"
 				<< "[0] Encerrar a aplicacao\nOption: ";
@@ -130,7 +130,8 @@ int main()
 			std::cout << '\n';
 			x = grafo.graphCategory();
 			std::string res = CategoryAux(x);
-			TGrafo grafoReduzido = grafo.GetReducedMatrix();
+			TGrafo grafoReduzido(0);
+			TGrafo grafoND(60);
 
 			switch (option)
 			{
@@ -188,21 +189,31 @@ int main()
 				case 9:
 					std::cout << "\nEste Grafo eh do tipo: "<<res;
 					std::cout << "\nSeu Grafo reduzido em forma de matrix de adjacencia eh:\n";
+					grafoReduzido = grafo.GetReducedMatrix();
 					grafoReduzido.show();
 					break;
 				case 10:
-					std::cout << "\nGRAUS DOS VERTICES: \n\n";
+					std::cout << "\nGRAUS DE TODOS OS VERTICES: \n\n";
 					grafo.GetAllDegrees();
 					break;
 				case 11:
-					std::cout << "\nCOLORACAO DO GRAFO: ";
+					std::cout << "\nCOLORACAO COMPLETA DO GRAFO: ";
 					grafo.WelshPowell();
 					break;
 				case 12:
-					//<< "[12] PARTE 2 PROJETO: Percurso/Grafo Euleriano :\n"
-					break;
+					std::cout << "Ciclo Euleriano :\n";
+					if (grafo.EulerianPossible())
+					{
+						std::cout << "O grafo admite Ciclo euleriano.\n";
+						std::cout << "Ciclo Euleriano: \n";
+						grafo.EulerianCycle(0);
+						grafo.FileToGraph("./grafo.txt");
+					}
+					else
+						std::cout << "O grafo nao admite ciclo euleriano.\n";
+										break;
 				case 13:
-					//<< "[13] PARTE 2 PROJETO: Admite grafo/ciclo hamiltoniano. OU talvez Djikstra?:\n"
+					std::cout << "\nGRAFO ADMITE CICLO HAMILTONIANO?";// -> algoritmo complexidade n*n!, vai ficar impossivel 4.9925923e+83 passos
 					break;
 			}
 			std::cout << '\n';

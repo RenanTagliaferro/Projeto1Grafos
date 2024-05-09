@@ -6,7 +6,8 @@ C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(450,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(457,38): warning C4305: '=': truncation from 'int' to 'float'
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(607,42): warning C4305: '=': truncation from 'int' to 'float'
-C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(151): warning C4715: 'TGrafo::isSource': not all control paths return a value
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(168): warning C4715: 'TGrafo::isSorv': not all control paths return a value
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(151): warning C4715: 'TGrafo::isSource': not all control paths return a value
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(187): warning C4172: returning address of local variable or temporary: grafo
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(727): warning C4715: 'TGrafo::EulerianPossible': not all control paths return a value
   ProjetoGrafos.vcxproj -> C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\x64\Debug\ProjetoGrafos.exe

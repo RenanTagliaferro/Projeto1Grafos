@@ -31,6 +31,7 @@ private:
 	void BuscaProfund1(float** adj_matrix, int vertex, std::stack<int>& stack, std::vector<bool>& visited, int n);
 	void BuscaProfund2(float** adj_matrix, int vertex, std::vector<bool>& visited, std::vector<int>& scc, int n);
 	void DirectedToNotDirected();
+
 public:
 	TGrafo(int n);
 	void insereA(int v, int w, float value);
@@ -56,5 +57,7 @@ public:
 	void InsertVertix();
 	void GetAllDegrees();
 	void WelshPowell();
+	bool EulerianPossible();
+	void EulerianCycle(int v);
 };
 #endif

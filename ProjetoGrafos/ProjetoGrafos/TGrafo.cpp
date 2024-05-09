@@ -684,3 +684,58 @@ void TGrafo::WelshPowell()
         std::cout << "Vertice " << i + 1 << " tem a cor numero " << cores[i] + 1 << std::endl;
 
 }
+
+bool TGrafo::EulerianPossible()
+{
+
+    int grauImpar = 0;
+    int somaGrau = 0;
+    int con = this->isConnected();
+    if (con == 1)
+    {
+        std::cout << "Grafo desconexo\n";
+        return false;
+    }
+
+    for (int i = 0; i < n; ++i)
+    {
+        int degree = 0;
+        for (int j = 0; j < n; ++j)
+        {
+            if (adj[i][j] != INT_MAX)
+                degree++;
+        }
+        somaGrau += degree;
+        if (degree % 2 != 0)
+            grauImpar++;
+    }
+    //Em qualquer grafo existe sempre um número par de vértices de grau impar &&
+    //Um grafo conexo ou categoria C3 apresenta um caminho Euleriano(aberto ou
+    //fechado) se e somente se não ocorrer nenhum ou existir no máximo dois vértices com grau ímpar.
+    if (grauImpar > 2 || grauImpar == 1)
+    {
+        std::cout << "Grafo com numero de vertices de grau impar ("<<grauImpar <<") \n";
+        return false;
+    }
+
+    if (somaGrau != n * 2)//a soma dos graus dos vértices em um grafo é igual a duas vezes o número de arestas
+    {
+        std::cout << "Grafo com a soma dos graus dos vertices diferente de 2 vezes o numero de arestas"
+            " soma dos Graus: " << somaGrau << "n arestas:" << m << " \n";
+        return true;
+    }
+}
+
+void TGrafo::EulerianCycle(int v)
+{
+
+    for (int i = 0; i < n; ++i)
+    {
+        if (adj[v][i] != INT_MAX)
+        {
+            std::cout << v << " -> " << i << std::endl;
+            removeA(v, i);
+            EulerianCycle(i);
+        }
+    }
+}
