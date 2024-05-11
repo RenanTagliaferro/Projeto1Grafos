@@ -2,7 +2,7 @@
 
 CONTEUDO:
 
-Projeto 1 de grafos, tema de relações de interação no instagram. será do tipo 6 – grafo orientado com peso na aresta;
+Projeto 1 e 2 de grafos, tema de relações de interação no instagram. será do tipo 6 – grafo orientado com peso na aresta;
 
 -enunciado.pdf: é o enunciado passado pelo professor descrevendo o projeto.
 
@@ -17,3 +17,5 @@ Projeto 1 de grafos, tema de relações de interação no instagram. será do ti
  -O codigo principal se encontra na Pasta ProjetoGrafos.
 
 Link do Grafo simulado - http://graphonline.ru/pt/?graph=rJjFBFioCkTRjpTF
+
+----->>>> atualização, incluindo Parte 2 do projeto Agora
