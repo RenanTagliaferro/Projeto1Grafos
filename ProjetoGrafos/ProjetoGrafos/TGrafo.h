@@ -31,7 +31,8 @@ private:
 	void BuscaProfund1(float** adj_matrix, int vertex, std::stack<int>& stack, std::vector<bool>& visited, int n);
 	void BuscaProfund2(float** adj_matrix, int vertex, std::vector<bool>& visited, std::vector<int>& scc, int n);
 	void DirectedToNotDirected();
-
+	void PrintRota(std::vector<int>& rot, int j);
+	bool bfs(int** rGraph, int s, int t, int parent[]);
 public:
 	TGrafo(int n);
 	void insereA(int v, int w, float value);
@@ -59,5 +60,7 @@ public:
 	void WelshPowell();
 	bool EulerianPossible();
 	void EulerianCycle(int v);
+	void dijkstra(int src);
+	int FordFulkerson(int s, int t);
 };
 #endif

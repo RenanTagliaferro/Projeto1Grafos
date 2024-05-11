@@ -739,3 +739,140 @@ void TGrafo::EulerianCycle(int v)
         }
     }
 }
+
+void TGrafo::dijkstra(int src)
+{
+    std::vector<int> dist(this->n, INT_MAX); // Distância da origem a i
+    std::vector<bool> F(this->n, false); // Se o vértice i está fechado
+    std::vector<int> rot(this->n, -1); // Predecessor de i no caminho mais curto
+
+    dist[src] = 0; // Distância do vértice de origem para si mesmo é 0
+
+    for (int count = 0; count < this->n - 1; count++)
+    {
+        // Encontrar o vértice mais próximo (min_index) do conjunto de vértices ainda não processados
+        int min = INT_MAX, min_index = 0;
+
+        for (int v = 0; v < this->n; v++)
+            if (F[v] == false && dist[v] <= min)
+                min = dist[v], min_index = v;
+
+        int u = min_index;
+        F[u] = true; // Marca o vértice como processado
+        // Atualizar a distância dos vértices adjacentes do vértice selecionado
+        for (int v = 0; v < this->n; v++)
+            // Atualizar dist[v] apenas se não estiver em F, houver uma aresta de
+            // u a v, e o peso total do caminho de src a v através de u é menor
+            // que o valor atual de dist[v]
+            if (!F[v] && adj[u][v] && dist[u] != INT_MAX
+                && dist[u] + adj[u][v] < dist[v])
+            {
+                dist[v] = dist[u] + adj[u][v];
+                rot[v] = u;
+            }
+    }
+    // Imprimir as distâncias e caminhos
+    std::cout << "\nVertice\t|Menor Distancia da Origem\t|Caminho" << std::endl;
+    for (int i = 0; i < this->n; i++)
+    {
+        std::cout << i + 1 << "\t|" << dist[i] << "\t\t\t\t|";
+        PrintRota(rot, i);
+        std::cout << "\n";
+    }
+}
+
+void TGrafo::PrintRota(std::vector<int>& rot, int j)
+{
+    // Base case: se j é a origem
+    if (rot[j] == -1)
+    {
+        std::cout << j + 1;
+        return;
+    }
+    PrintRota(rot, rot[j]);
+    std::cout << " -> " << j + 1;
+}
+
+bool TGrafo::bfs(int** rGraph, int s, int t, int parent[]) 
+{
+    bool visited[60];
+    memset(visited, 0, sizeof(visited));
+
+    std::queue<int> q;
+    q.push(s);
+    visited[s] = true;
+    parent[s] = -1;
+
+    while (!q.empty()) 
+    {
+        int u = q.front();
+        q.pop();
+
+        for (int v = 0; v < n; v++) 
+        {
+            if (visited[v] == false && rGraph[u][v] > 0) 
+            {
+                q.push(v);
+                parent[v] = u;
+                visited[v] = true;
+            }
+        }
+    }
+
+    return (visited[t] == true);
+}
+
+int TGrafo::FordFulkerson(int s, int t) 
+{
+    int** rGraph = new int* [n];
+    for (int i = 0; i < n; i++)
+        rGraph[i] = new int[n];
+
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            rGraph[i][j] = adj[i][j];
+
+    int parent[60];
+    int max_flow = 0;
+
+    // Enquanto houver um caminho de aumento do vértice de origem para o vértice de destino
+    while (bfs(rGraph, s, t, parent)) 
+    {
+        int path_flow = INT_MAX;
+        for (int v = t; v != s; v = parent[v]) 
+        {
+            int u = parent[v];
+            path_flow = std::min(path_flow, rGraph[u][v]);
+        }
+
+        // Atualiza as capacidades residuais do caminho encontrado
+        for (int v = t; v != s; v = parent[v]) 
+        {
+            int u = parent[v];
+            rGraph[u][v] -= path_flow;
+            rGraph[v][u] += path_flow;
+        }
+
+        // Adiciona o fluxo de caminho ao fluxo máximo
+        max_flow += path_flow;
+
+        // Imprime o caminho encontrado
+        std::cout << "Caminho encontrado:";
+        for (int v = t; v != s; v = parent[v]) 
+        {
+            int u = parent[v];
+            std::cout << " " << u << "->" << v;
+        }
+        std::cout << std::endl;
+
+        // Imprime o fluxo máximo atual
+        std::cout << "Fluxo maximo atual: " << max_flow << std::endl;
+    }
+
+    // Libera a memória alocada para a matriz residual
+    for (int i = 0; i < n; i++)
+        delete[] rGraph[i];
+    delete[] rGraph;
+
+    return max_flow;
+}

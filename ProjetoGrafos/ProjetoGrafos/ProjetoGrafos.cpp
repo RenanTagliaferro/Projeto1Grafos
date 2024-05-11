@@ -213,7 +213,15 @@ int main()
 						std::cout << "O grafo nao admite ciclo euleriano.\n";
 										break;
 				case 13:
-					std::cout << "\nGRAFO ADMITE CICLO HAMILTONIANO?";// -> algoritmo complexidade n*n!, vai ficar impossivel 4.9925923e+83 passos
+					std::cout << "\n DJIKSTRA APLICADO AO GRAFO, A PARTIR DO VERTICE 20";
+					std::cout << "\nTabela de menores caminhos a partir do vertice 20 do Grafo: \n";
+					grafo.dijkstra(19);
+					break;
+					break;
+				case 14:
+					std::cout << "\n FORD-FULKERSON UTILIZANDO 1 COMO ORIGEM E 60 COMO SUMIDOURO";
+					int maxflux = grafo.FordFulkerson(0,59);
+					std::cout << "\n\n Fluxo maximo encontrado = " << maxflux<<"\n\n";
 					break;
 			}
 			std::cout << '\n';
