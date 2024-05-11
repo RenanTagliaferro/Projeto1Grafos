@@ -123,7 +123,8 @@ int main()
 				<< "[10] PARTE 2 PROJETO: Grau dos vertices:\n"
 				<< "[11] PARTE 2 PROJETO: Coloracao :\n"
 				<< "[12] PARTE 2 PROJETO: Percurso/Grafo Euleriano :\n"
-				<< "[13] PARTE 2 PROJETO: Admite grafo/ciclo hamiltoniano. :\n"
+				<< "[13] PARTE 2 PROJETO: DJIKSTRA APLICADO AO GRAFO. :\n"
+				<< "[14] PARTE 2 PROJETO: FORD-FULKERSON. :\n"
 				<< "[0] Encerrar a aplicacao\nOption: ";
 			std::cin >> option;
 			std::cin.ignore();
@@ -211,12 +212,11 @@ int main()
 					}
 					else
 						std::cout << "O grafo nao admite ciclo euleriano.\n";
-										break;
+					break;
 				case 13:
 					std::cout << "\n DJIKSTRA APLICADO AO GRAFO, A PARTIR DO VERTICE 20";
 					std::cout << "\nTabela de menores caminhos a partir do vertice 20 do Grafo: \n";
 					grafo.dijkstra(19);
-					break;
 					break;
 				case 14:
 					std::cout << "\n FORD-FULKERSON UTILIZANDO 1 COMO ORIGEM E 60 COMO SUMIDOURO";

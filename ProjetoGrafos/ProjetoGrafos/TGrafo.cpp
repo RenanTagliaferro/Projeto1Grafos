@@ -687,7 +687,6 @@ void TGrafo::WelshPowell()
 
 bool TGrafo::EulerianPossible()
 {
-
     int grauImpar = 0;
     int somaGrau = 0;
     int con = this->isConnected();
@@ -696,7 +695,6 @@ bool TGrafo::EulerianPossible()
         std::cout << "Grafo desconexo\n";
         return false;
     }
-
     for (int i = 0; i < n; ++i)
     {
         int degree = 0;
@@ -722,8 +720,9 @@ bool TGrafo::EulerianPossible()
     {
         std::cout << "Grafo com a soma dos graus dos vertices diferente de 2 vezes o numero de arestas"
             " soma dos Graus: " << somaGrau << "n arestas:" << m << " \n";
-        return true;
+        return false;
     }
+    return true;
 }
 
 void TGrafo::EulerianCycle(int v)
@@ -861,7 +860,7 @@ int TGrafo::FordFulkerson(int s, int t)
         for (int v = t; v != s; v = parent[v]) 
         {
             int u = parent[v];
-            std::cout << " " << u << "->" << v;
+            std::cout << " " << u +1 << "->" << v + 1;
         }
         std::cout << std::endl;
 
