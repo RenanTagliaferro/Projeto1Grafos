@@ -203,23 +203,15 @@ int main()
 					break;
 				case 12:
 					std::cout << "Ciclo Euleriano :\n";
-					if (!grafo.EulerianPossible())
+					if (grafo.EulerianPossible())
 					{
-						std::cout << "O grafo NAO eh euleriano, mas pode ter Ciclo Valido...\n";
-						std::cout << "\npressione ENTER para iniciar busca por ciclo valido.\n";
-						std::getchar();
+						std::cout << "O grafo admite Ciclo euleriano.\n";
+						std::cout << "Ciclo Euleriano: \n";
+						grafo.EulerianCycle(0);
+						grafo.FileToGraph("./grafo.txt");
 					}
 					else
-					{
-						std::cout << "O grafo eh euleriano! encontrando Ciclo Valido.\n";
-						std::cout << "\npressione ENTER para iniciar busca por ciclo valido.\n";
-						std::getchar();
-					}
-
-						std::cout << "Ciclo Euleriano: \n";
-						grafo.EulerianCycleCall(0);
-						grafo.FileToGraph("./grafo.txt");
-
+						std::cout << "O grafo nao eh euleriano.\n";
 					break;
 				case 13:
 					std::cout << "\n DJIKSTRA APLICADO AO GRAFO, A PARTIR DO VERTICE 20";

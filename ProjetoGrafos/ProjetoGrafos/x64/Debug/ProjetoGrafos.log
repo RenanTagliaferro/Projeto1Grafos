@@ -1,5 +1,8 @@
 ﻿  ProjetoGrafos.cpp
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(163,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(136,8): warning C4101: 'maxflux': unreferenced local variable
+  Testes.cpp
+  Generating Code...
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\Testes.cpp(19): warning C4715: 'Exaux': not all control paths return a value
 C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(24): warning C4715: 'CategoryAux': not all control paths return a value
   ProjetoGrafos.vcxproj -> C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\x64\Debug\ProjetoGrafos.exe

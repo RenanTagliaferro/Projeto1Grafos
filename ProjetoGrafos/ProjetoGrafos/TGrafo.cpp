@@ -725,39 +725,16 @@ bool TGrafo::EulerianPossible()
     return true;
 }
 
-void TGrafo::EulerianCycleCall(int v)
-{
-    float** originalGraph = new float* [n];//copiando a matrix original
-    for (int i = 0; i < n; ++i)
-    {
-        originalGraph[i] = new float[n];
-        for (int j = 0; j < n; ++j)
-            originalGraph[i][j] = adj[i][j];
-    }
-    int originalM = this->m;
-    int totalRemoved = 0;
-    EulerianCycle(v,totalRemoved);
-    this->adj = originalGraph;//retaurando as arestas deletadas
-    this->m = originalM;
-
-    if (totalRemoved != m)
-        std::cout << "\nCICLO NAO ENCONTRADO: Nao foi encontrado ciclo valido a partir do vertice " << v+1 << "!";
-    else
-        std::cout << "\nCICLO ENCONTRADO: O ciclo acima eh um ciclo euleriano valido, a partir do vertice " << v+1 << "!";
-
-}
-
-void TGrafo::EulerianCycle(int v, int &totalRemoved)
+void TGrafo::EulerianCycle(int v)
 {
 
     for (int i = 0; i < n; ++i)
     {
         if (adj[v][i] != INT_MAX)
         {
-            std::cout << v+1 << " -> " << i+1 << std::endl;
+            std::cout << v << " -> " << i << std::endl;
             removeA(v, i);
-            totalRemoved++;
-            EulerianCycle(i, totalRemoved);
+            EulerianCycle(i);
         }
     }
 }
