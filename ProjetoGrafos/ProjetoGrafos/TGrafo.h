@@ -33,6 +33,7 @@ private:
 	void DirectedToNotDirected();
 	void PrintRota(std::vector<int>& rot, int j);
 	bool bfs(int** rGraph, int s, int t, int parent[]);
+	void EulerianCycle(int v, int& totalRemoved);
 public:
 	TGrafo(int n);
 	void insereA(int v, int w, float value);
@@ -59,7 +60,7 @@ public:
 	void GetAllDegrees();
 	void WelshPowell();
 	bool EulerianPossible();
-	void EulerianCycle(int v);
+	void EulerianCycleCall(int v);
 	void dijkstra(int src);
 	int FordFulkerson(int s, int t);
 };
