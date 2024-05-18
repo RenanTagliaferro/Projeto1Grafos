@@ -1,8 +1,18 @@
-﻿  ProjetoGrafos.cpp
-C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(163,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(136,8): warning C4101: 'maxflux': unreferenced local variable
-  Testes.cpp
-  Generating Code...
-C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\Testes.cpp(19): warning C4715: 'Exaux': not all control paths return a value
-C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\ProjetoGrafos.cpp(24): warning C4715: 'CategoryAux': not all control paths return a value
+﻿  TGrafo.cpp
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(27,32): warning C4305: '=': truncation from 'int' to 'float'
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(61,28): warning C4305: '=': truncation from 'int' to 'float'
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(210,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(286,39): warning C4305: '=': truncation from 'int' to 'float'
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(454,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(461,38): warning C4305: '=': truncation from 'int' to 'float'
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(611,42): warning C4305: '=': truncation from 'int' to 'float'
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(806,35): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(869,36): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(155): warning C4715: 'TGrafo::isSource': not all control paths return a value
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(172): warning C4715: 'TGrafo::isSorv': not all control paths return a value
+C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\ProjetoGrafos\TGrafo.cpp(191): warning C4172: returning address of local variable or temporary: grafo
   ProjetoGrafos.vcxproj -> C:\Users\renan\Desktop\CompSci\Mackenzie\6º Semestre\Teoria dos Grafos\Projeto\Projeto 1\ProjetoGrafos\x64\Debug\ProjetoGrafos.exe

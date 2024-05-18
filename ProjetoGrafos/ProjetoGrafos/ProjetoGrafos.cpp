@@ -1,3 +1,7 @@
+/*Lucas Meres  	10395777
+Renan Tagliaferro	10395211
+Thiago Leandro Liporace	10395816
+*/
 
 #include <iostream>
 #include "TGrafo.h"
@@ -207,7 +211,7 @@ int main()
 					{
 						std::cout << "O grafo admite Ciclo euleriano.\n";
 						std::cout << "Ciclo Euleriano: \n";
-						grafo.EulerianCycle(0);
+						grafo.EulerianCycleStart();
 						grafo.FileToGraph("./grafo.txt");
 					}
 					else

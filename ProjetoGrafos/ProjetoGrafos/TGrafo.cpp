@@ -1,3 +1,7 @@
+/*Lucas Meres  	10395777
+Renan Tagliaferro	10395211
+Thiago Leandro Liporace	10395816
+*/
 #include <iostream>
 #include <fstream>
 #include "TGrafo.h"
@@ -712,7 +716,7 @@ bool TGrafo::EulerianPossible()
     //fechado) se e somente se não ocorrer nenhum ou existir no máximo dois vértices com grau ímpar.
     if (grauImpar > 2 || grauImpar == 1)
     {
-        std::cout << "Grafo com numero de vertices de grau impar ("<<grauImpar <<") \n";
+        std::cout << "Grafo com numero de vertices de grau impar, impar("<<grauImpar <<") \n";
         return false;
     }
 
@@ -725,18 +729,51 @@ bool TGrafo::EulerianPossible()
     return true;
 }
 
-void TGrafo::EulerianCycle(int v)
+void TGrafo::EulerianCycleStart()
 {
-
+    float** originalGraph = new float* [n];//copiando a matrix
     for (int i = 0; i < n; ++i)
+    {
+        originalGraph[i] = new float[n];
+        for (int j = 0; j < n; ++j)
+            originalGraph[i][j] = adj[i][j];
+    }
+
+    int originalM = this->m, totalEdges, start, end;//setando variaveis utilizadas para checagem de ciclo válido
+    bool foundECycle = false;
+
+    for (int i = 0; i < this->n; i++)//para cada vertice, ele tenta achar um ciclo válido
+    {
+        start = i;//marca o inicio
+        totalEdges = 0;//marca quantos vetices foram percorridos
+        this->EulerianCycle(0,totalEdges,end);//tenta achar ciclo para a variável atual
+        if (totalEdges == originalM && start == end)//se TODOS os verices foram percorridos E se o inicia for igual ao fim(ciclo)
+        {
+            std::cout << "\nCAMINHO ACEITO, ESTE CAMINHO EH UM CICLO EULERIANO VALIDO\n";
+            foundECycle = true;
+            break;//sai do for pois já achou um ciclo
+        }
+    }
+
+    if(!foundECycle)//printa caso não foram achados ciclos válidos
+        std::cout << "NAO FOI POSSIVEL ENCONTRAR UM CAMINHO EULERIANO VALIDO";
+
+    this->adj = originalGraph;//restaurando a matriz
+    this->m = originalM;
+}
+void TGrafo::EulerianCycle(int v,int &totalEdges, int& last)
+{
+    for (int i = 0; i < n; ++i)//a apartir do v inicial
     {
         if (adj[v][i] != INT_MAX)
         {
             std::cout << v << " -> " << i << std::endl;
-            removeA(v, i);
-            EulerianCycle(i);
+            removeA(v, i);//remove a aresta existente
+            totalEdges++;//conta mais uma nas removidas
+            EulerianCycle(i, totalEdges, last);//recursivamente tenta chegar até o fim.
         }
     }
+    last = v;//ultimo ponto encontrado na recursão.
 }
 
 void TGrafo::dijkstra(int src)

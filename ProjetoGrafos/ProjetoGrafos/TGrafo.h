@@ -1,3 +1,8 @@
+/*Lucas Meres  	10395777
+Renan Tagliaferro	10395211
+Thiago Leandro Liporace	10395816
+*/
+
 /*
 Implementação de uma Classe para grafos denominada TGrafo,
 usando Matriz de Adjacência
@@ -33,6 +38,7 @@ private:
 	void DirectedToNotDirected();
 	void PrintRota(std::vector<int>& rot, int j);
 	bool bfs(int** rGraph, int s, int t, int parent[]);
+	void EulerianCycle(int v,int &totalEdges, int& last);
 public:
 	TGrafo(int n);
 	void insereA(int v, int w, float value);
@@ -59,7 +65,7 @@ public:
 	void GetAllDegrees();
 	void WelshPowell();
 	bool EulerianPossible();
-	void EulerianCycle(int v);
+	void EulerianCycleStart();
 	void dijkstra(int src);
 	int FordFulkerson(int s, int t);
 };
